@@ -12,19 +12,22 @@ new Vue({
             this.monsterHealth = 100;
         },
         attack: function(){
-
             this.monsterHealth -= this.calculateDamage(3, 10);
-
             if(this.checkWin()){
                 return;
             }
 
             this.playerHealth -= this.calculateDamage(5, 12);
-
             this.checkWin();
         },
         specialAttack: function(){
+            this.monsterHealth -= this.calculateDamage(10, 20);
+            if(this.checkWin()){
+                return;
+            }
 
+            this.playerHealth -= this.calculateDamage(5, 12);
+            this.checkWin();            
         },
         heal: function(){
 
